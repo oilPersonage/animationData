@@ -1,0 +1,65 @@
+@import "fonts"
+
+$accentColor: #F26101
+$bgColor: #ffffff
+$gray: #D9E8F5
+$blue: #91BED4
+$darkBlue: #304269
+$transition: all 0.15s ease-in
+
+*
+  box-sizing: border-box
+  text-decoration: none
+  padding: 0
+  margin: 0
+  font-family: RobotoRegular
+
+body
+  background-color: $bgColor
+  width: 100vw
+  height: 100vh
+
+#root
+  width: 100%
+  height: 100%
+
+li
+  list-style: none
+
+a
+  color: #000
+
+canvas
+  width: 100%
+  height: 100%
+  display: flex
+
+.title
+  position: absolute
+  top: 3%
+  left: 50%
+  transform: translateX(-50%)
+
+.full
+  display: flex
+  width: 100vw
+  height: 100vh
+
+.content
+  display: flex
+  flex-wrap: wrap
+  width: 100%
+  a
+    display: inline-block
+    border: 5px solid #91BED4
+    width: 50%
+    height: 50%
+
+.componentBox
+  height: 100%
+  transition: $transition
+
+.title
+  position: absolute
+
+@import "media"
