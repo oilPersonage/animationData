@@ -2,7 +2,7 @@ import React from 'react'
 import {Text, Layer, Rect, Circle, RegularPolygon, Line} from 'react-konva';
 
 export default function WatterHome(props) {
-  const {height, width, pos, fontSize, well, rotation} = props
+  const {height, width, pos, fontSize, well, rotation, fontSizeNumber} = props
   const {fill, fontFamily, strokeDark, fillHome} = props.state
   const {nsQ, nsH} = props.now
 
@@ -12,6 +12,7 @@ export default function WatterHome(props) {
       y: pos(height, 55, 0),
       radius: pos(width, 2, 0),
     }]
+
 
   let amount = 0
   well.map(item => amount = item.v+amount)
@@ -81,65 +82,66 @@ export default function WatterHome(props) {
         fill={fill}
         closed={true}
     />
+    <Text
+        x={pos(width, 57, 0)}
+        y={pos(height,50, fontSizeNumber)}
+        fontFamily={fontFamily}
+        fontSize={fontSizeNumber}
+        fill={strokeDark}
+        text={`${amount.toFixed(2)}`}
+    />
     <Rect
         // TOP Home
         x={pos(width, 75, 0)}
-        y={pos(height, 60, pos(height, 20, 0))}
+        y={pos(height, 60, pos(height, 40, 0))}
         width={pos(width, 15, 0)}
-        height={pos(height, 20, 0)}
-        fill={fillHome}
-    />
-    <RegularPolygon
-        // TOP Home triangle
-        x={pos(width, 82.5, 0)}
-        y={pos(height, 55, pos(height, 20, 0))}
-        sides={3}
-        scaleY={0.5}
-        width={pos(width, 25, 0)}
-        // radius={70}
+        height={pos(height, 40, 0)}
         fill={fillHome}
     />
     <Rect
         // Window Home
-        x={pos(width, 75.5, 0)}
-        y={pos(height, 48, pos(height, 5, 0))}
-        width={pos(width, 6.5, 0)}
-        height={pos(height, 6, 0)}
+        x={pos(width, 77.5, 0)}
+        y={pos(height, 37, pos(height, 8, 0))}
+        width={pos(width, 10, 0)}
+        height={pos(height, 8, 0)}
         fill="#fff"
     />
     <Rect
         // Window Home
-        x={pos(width, 83, 0)}
-        y={pos(height, 48, pos(height, 5, 0))}
-        width={pos(width, 6.5, 0)}
-        height={pos(height, 6, 0)}
+        x={pos(width, 77.5, 0)}
+        y={pos(height, 47, pos(height, 8, 0))}
+        width={pos(width, 10, 0)}
+        height={pos(height, 8, 0)}
         fill="#fff"
     />
     <Text
-        x={pos(width, 76.5, 0)}
-        y={pos(height, 47.6, fontSize)}
+        x={pos(width, 79, 0)}
+        y={pos(height, 35, fontSizeNumber)}
         fontFamily={fontFamily}
-        fontSize={fontSize}
+        fontSize={fontSizeNumber}
         fill={strokeDark}
         text={`Q: ${nsQ.toFixed(2)}`}
     />
     <Text
-        x={pos(width, 84, 0)}
-        y={pos(height, 47.6, fontSize)}
+        x={pos(width, 79, 0)}
+        y={pos(height, 45, fontSizeNumber)}
         fontFamily={fontFamily}
-        fontSize={fontSize}
+        fontSize={fontSizeNumber}
         fill={strokeDark}
         text={`H: ${nsH.toFixed(2)}`}
     />
+    <Rect
+        x={pos(width, 70.1, 0)}
+        y={pos(height, 60, pos(height, 3, 0))}
+        width={pos(width, 0.5, 0)}
+        height={pos(height, 3, 0)}
+        fill={strokeDark}
+    />
     <Line
         points={[
-          pos(width, 67, 0),
+          pos(width, 70.5, 0),
           pos(height, 59, 0),
-          pos(width, 65.5, 0),
-          pos(height, 56, 0),
-          pos(width, 69, 0),
-          pos(height, 56, 0),
-          pos(width, 68, 0),
+          pos(width, 70.5, 0),
           pos(height, 58, 0),
           pos(width, 82.5, 0),
           pos(height, 58, 0),
@@ -200,7 +202,7 @@ export default function WatterHome(props) {
     />
     <Text
         x={pos(width, 81.5, 0)}
-        y={pos(height, 37, fontSize)}
+        y={pos(height, 25, fontSize)}
         fontFamily={fontFamily}
         fontSize={fontSize*1.2}
         fill={strokeDark}

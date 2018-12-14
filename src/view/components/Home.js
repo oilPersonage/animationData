@@ -11,23 +11,36 @@ class Home extends React.Component {
   constructor(props) {
     super(props)
 
-    let heightCont, widthCont;
+    this.heightCont = 0;
+    this.widthCont = 0;
     const {clientWidth} = document.body
-    heightCont = (clientWidth / 2) * 0.5 - 60
-    widthCont = clientWidth / 2 - 60
-    this.props.dispatch({type: "HEIGHT", payload: {heightCont, widthCont}})
+    const mobile = clientWidth < 998
+    this.heightCont = mobile ? clientWidth * 0.5 : ((clientWidth - clientWidth * 0.05) / 2) * 0.5
+    this.widthCont = mobile ? clientWidth - 10 : (clientWidth - clientWidth * 0.05) / 2
+    this.props.dispatch({type: "HEIGHT", payload: {heightCont: this.heightCont, widthCont: this.widthCont}})
   }
 
   render() {
+    const style={height: this.heightCont, width: this.widthCont}
     const {now, well} = this.props
-    console.log(this.props)
     if (this.props.state) {
       return <div className="full">
         <div className="content">
-          <Link to='/one'><One state={this.props.state.length} now={now} history={this.props.history} well={well} par={1}/></Link>
-          <Link to='/two'><Two state={this.props.state.length} par={1}/></Link>
-          <Link to='/three'><Three state={this.props.state.length} par={1}/></Link>
-          <Link to='/four'><Four state={this.props.state.length} par={1}/></Link>
+          <div className='contentTop'>
+            <Link to='/one' className="link" style={style}><One state={this.props.state.length} electr={this.props.electr} now={now} history={this.props.history} well={well} par={1}/></Link>
+            <Link to='/two' className="link" style={style}><Two state={this.props.state.length} currentIndex={this.props.currentIndex} par={1}/></Link>
+          </div>
+          <div className='contentTop'>
+            <Link to='three' className='linkAbsolute' style={style} />
+            <div className="link" style={style}><Three state={this.props.state.length} par={1}/></div>
+            <Link to='/four' className="link" style={style}><Four
+                finishGraphNS={this.props.finishGraphNS}
+                finishNSEE={this.props.finishNSEE}
+                finishGraphNSH={this.props.finishGraphNSH}
+                graph={this.props.graph}
+                state={this.props.state.length}
+                par={1}/></Link>
+          </div>
         </div>
       </div>
     } else {

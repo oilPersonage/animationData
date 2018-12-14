@@ -19,45 +19,30 @@ class Four extends React.Component {
 
   render() {
     const {clientWidth} = document.body
-    let heightCont, widthCont, fontSize, fontSizeTitle, percent;
-    const {length, strokeDark, fill, fillWhite, fontFamily} = this.props.state
+    let heightCont, widthCont, fontSizeTitle, percent;
+    const {length} = this.props.state
 
     if (this.props.state.length && this.props.par) {
       heightCont = length ? length.widthCont * 0.5 : length.heightCont * 2
       widthCont = length ? length.widthCont : length.heightCont * 2
       percent = length.widthCont * 100 / 1920 * 0.01
       fontSizeTitle = percent * 40
-      fontSize = percent * 28
     } else {
-      heightCont = (clientWidth - 60) * 0.5
+      heightCont = (clientWidth - 120) * 0.5
       widthCont = clientWidth
       percent = widthCont * 100 / 1920 * 0.01
       fontSizeTitle = percent * 40
-      fontSize = percent * 28
     }
 
-    const pos = (length, percent, height) => {
-      return (length * percent) / 100 - height
-    }
-    console.log({heightCont, widthCont, fontSize})
-    return <div className="componentBox" style={{height: heightCont, width: widthCont, opacity: this.state.view}}>
+    return <div className="componentBox componentBoxFour" style={{height: heightCont, width: widthCont, opacity: this.state.view}}>
+    {/*return <div className="componentBox componentBoxFour" style={{height:'100%', width: '100%', opacity: this.state.view}}>*/}
       {!this.props.par && <Back history={this.props.history}/>}
-      {heightCont && widthCont && fontSize ? <Stage width={widthCont} height={heightCont}>
-            <Layer>
-              <Text
-                  x={0}
-                  y={pos(heightCont, 5, fontSize)}
-                  align='center'
-                  width={widthCont}
-                  fontFamily={fontFamily}
-                  fontSize={fontSizeTitle}
-                  fill={strokeDark}
-                  text="Показатели"
-              />
-            </Layer>
-          </Stage>
-          : ''}
-      <ChartFour/>
+      <div className="titleFour" style={{fontSize: fontSizeTitle}}>Показатели</div>
+      <ChartFour
+          finishGraphNS={this.props.finishGraphNS}
+          finishGraphNSH={this.props.finishGraphNSH}
+          finishNSEE={this.props.finishNSEE}
+          graph={this.props.graph}/>
     </div>
   }
 }

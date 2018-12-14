@@ -1,3 +1,5 @@
+import well from '../data/wellsData'
+
 const initialState = {
   fill: '#9FB7FF',
   fontFamily: 'RobotoRegular',
@@ -6,7 +8,6 @@ const initialState = {
   fillWhite: '#fff',
   modal: {
     view: false,
-    body: ''
   },
 }
 
@@ -19,10 +20,34 @@ export default function todoApp(state = initialState, action) {
     }
     return {...state, length}
     }
-  if (type === 'MODAL') {
+  if (type === 'MODAL-HIDE')  {
     const modal = {
       view: !state.modal.view,
-      body: payload
+      body: payload,
+    }
+    return {...state, modal}
+  }
+  if (type === 'MODAL') {
+    const date = new Date()
+    const currentIndex = Math.round((date.getHours() * 60 * 60 + date.getMinutes() * 60 + date.getSeconds()) / 5)
+    const currentHourIndex = (5 * 12 * 60) / 5
+    const graph=[]
+    const clone = well[payload.id].v.slice(0)
+    const currentArr = clone.splice(0, currentIndex)
+    for (let i = 0; i <= 23; i++) {
+      if (currentArr[i*currentHourIndex]) {
+        const item = {y:  currentArr[i*currentHourIndex], x: i}
+        graph.push(item)
+      }
+    }
+
+    const modal = {
+      view: !state.modal.view,
+      body: {
+        id: payload.id,
+        indent: payload.indent,
+        graph
+      }
     }
     return {...state, modal}
   }
