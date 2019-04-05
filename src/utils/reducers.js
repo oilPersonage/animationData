@@ -1,11 +1,13 @@
 import well from '../data/wellsData'
 
 const initialState = {
-  fill: '#9FB7FF',
-  fontFamily: 'RobotoRegular',
-  strokeDark: '#353b76',
+  fill: '#5fb9e1',
+  fontFamily: 'Arial',
+  strokeDark: '#076ba6',
   fillHome: '#e29c80',
   fillWhite: '#fff',
+  strokeGray: '#938994',
+  strokeBlack: '#333',
   modal: {
     view: false,
   },
@@ -36,7 +38,7 @@ export default function todoApp(state = initialState, action) {
     const currentArr = clone.splice(0, currentIndex)
     for (let i = 0; i <= 23; i++) {
       if (currentArr[i*currentHourIndex]) {
-        const item = {y:  currentArr[i*currentHourIndex], x: i}
+        const item = {y:  currentArr[i*currentHourIndex] - currentArr[(i-1)*currentHourIndex], x: i}
         graph.push(item)
       }
     }

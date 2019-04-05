@@ -6,6 +6,7 @@ import One from "./One/One";
 import Four from "./Four/Four";
 import Three from "./Three/Three";
 import Two from "./Two/Two";
+import Back from '../components/Back'
 
 class Home extends React.Component {
   constructor(props) {
@@ -21,14 +22,16 @@ class Home extends React.Component {
   }
 
   render() {
-    const style={height: this.heightCont, width: this.widthCont}
+    const {clientWidth} = document.body
+    const style={height: this.heightCont, width: this.widthCont, left: clientWidth / 2 - this.widthCont - 5}
     const {now, well} = this.props
-    if (this.props.state) {
+    if (this.props.state.length) {
       return <div className="full">
         <div className="content">
+          <Back history={this.props.history}/>
           <div className='contentTop'>
             <Link to='/one' className="link" style={style}><One state={this.props.state.length} electr={this.props.electr} now={now} history={this.props.history} well={well} par={1}/></Link>
-            <Link to='/two' className="link" style={style}><Two state={this.props.state.length} currentIndex={this.props.currentIndex} par={1}/></Link>
+            <Link to='/two' className="link" style={style}><Two state={this.props.state.length} currentIndex={this.props.currentIndex} graphHouses={this.props.graphHouses} par={1}/></Link>
           </div>
           <div className='contentTop'>
             <Link to='three' className='linkAbsolute' style={style} />
@@ -37,6 +40,7 @@ class Home extends React.Component {
                 finishGraphNS={this.props.finishGraphNS}
                 finishNSEE={this.props.finishNSEE}
                 finishGraphNSH={this.props.finishGraphNSH}
+                finishGraphE={this.props.finishGraphE}
                 graph={this.props.graph}
                 state={this.props.state.length}
                 par={1}/></Link>

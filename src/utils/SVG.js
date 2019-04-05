@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function () {
-  const svg1 = <svg id="svg1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.65 62.65">
+export default function (data) {
+  const svg1 = <svg id="svg1" style={{animation: data[0].q === 0 && data[0].v === 0 ? '' : 'role 0.5s infinite'}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.65 62.65">
     <circle className="cls-1" cx="31.35" cy="31.74" r="27.98"/>
     <path className="cls-2"
           d="M196,168.25a27.88,27.88,0,1,1-10.86,2.19A27.9,27.9,0,0,1,196,168.25m0-.15A28,28,0,1,0,224,196.15,28.05,28.05,0,0,0,196,168.1Z"
@@ -55,7 +55,7 @@ export default function () {
     <line className="cls-4" x1="40.06" y1="25.38" x2="31.45" y2="31.66"/>
     <line className="cls-4" x1="37.71" y1="23.01" x2="31.45" y2="31.66"/>
   </svg>
-  const svg2 = <svg id="svg2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.65 62.65">
+  const svg2 = <svg id="svg2" style={{animation: data[1].q === 0 && data[1].v === 0 ? '' : 'role 2s infinite'}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.65 62.65">
     <circle className="cls-1" cx="31.35" cy="31.74" r="27.98"/>
     <path className="cls-2"
           d="M196,168.25a27.88,27.88,0,1,1-10.86,2.19A27.9,27.9,0,0,1,196,168.25m0-.15A28,28,0,1,0,224,196.15,28.05,28.05,0,0,0,196,168.1Z"
@@ -109,7 +109,7 @@ export default function () {
     <line className="cls-4" x1="40.06" y1="25.38" x2="31.45" y2="31.66"/>
     <line className="cls-4" x1="37.71" y1="23.01" x2="31.45" y2="31.66"/>
   </svg>
-  const svg3 = <svg id="svg3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.65 62.65">
+  const svg3 = <svg id="svg3" style={{animation: data[2].q === 0 && data[2].v === 0 ? '' : 'role 1s infinite'}}  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.65 62.65">
     <circle className="cls-1" cx="31.35" cy="31.74" r="27.98"/>
     <path className="cls-2"
           d="M196,168.25a27.88,27.88,0,1,1-10.86,2.19A27.9,27.9,0,0,1,196,168.25m0-.15A28,28,0,1,0,224,196.15,28.05,28.05,0,0,0,196,168.1Z"
@@ -163,7 +163,7 @@ export default function () {
     <line className="cls-4" x1="40.06" y1="25.38" x2="31.45" y2="31.66"/>
     <line className="cls-4" x1="37.71" y1="23.01" x2="31.45" y2="31.66"/>
   </svg>
-  const svg4 = <svg id="svg4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.65 62.65">
+  const svg4 = <svg id="svg4" style={{animation: data[3].q === 0 && data[3].v === 0 ? '' : 'role 1.5s infinite'}}  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.65 62.65">
     <circle className="cls-1" cx="31.35" cy="31.74" r="27.98"/>
     <path className="cls-2"
           d="M196,168.25a27.88,27.88,0,1,1-10.86,2.19A27.9,27.9,0,0,1,196,168.25m0-.15A28,28,0,1,0,224,196.15,28.05,28.05,0,0,0,196,168.1Z"

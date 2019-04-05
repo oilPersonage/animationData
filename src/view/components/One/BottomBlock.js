@@ -64,19 +64,19 @@ export default class BottomBlock extends React.Component {
           strokeWidth={2}
       />
       <Text  // small white
-          x={pos(width, 58, 0)}
+          x={pos(width, 57, 0)}
           y={pos(height, 83, fontSizeNumber)}
           fontSize={fontSizeNumber}
           fontFamily={fontFamily}
           fill={strokeDark}
-          text={`${this.props.electr} кВт/ч`}
+          text={`${this.props.electr} кВт*ч`}
       />
       <Text  // small white
-          x={pos(width, 61, 0)}
+          x={pos(width, 51, 0)}
           y={pos(height, 72, fontSizeNumber)}
-          fontSize={fontSizeNumber}
+          fontSize={fontSizeNumber * 0.9}
           fontFamily={fontFamily}
-          fill={strokeDark}
+          fill={fillWhite}
           text={"Потребление электроэнергии"}
       />
     </Layer>

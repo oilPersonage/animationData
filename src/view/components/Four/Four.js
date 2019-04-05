@@ -18,7 +18,7 @@ class Four extends React.Component {
   }
 
   render() {
-    const {clientWidth} = document.body
+    const {clientWidth, clientHeight} = document.body
     let heightCont, widthCont, fontSizeTitle, percent;
     const {length} = this.props.state
 
@@ -28,7 +28,8 @@ class Four extends React.Component {
       percent = length.widthCont * 100 / 1920 * 0.01
       fontSizeTitle = percent * 40
     } else {
-      heightCont = (clientWidth - 120) * 0.5
+      // heightCont = (clientWidth - 120) * 0.5
+      heightCont = clientHeight - 15
       widthCont = clientWidth
       percent = widthCont * 100 / 1920 * 0.01
       fontSizeTitle = percent * 40
@@ -39,10 +40,11 @@ class Four extends React.Component {
       {!this.props.par && <Back history={this.props.history}/>}
       <div className="titleFour" style={{fontSize: fontSizeTitle}}>Показатели</div>
       <ChartFour
+          widthCont={widthCont}
           finishGraphNS={this.props.finishGraphNS}
           finishGraphNSH={this.props.finishGraphNSH}
           finishNSEE={this.props.finishNSEE}
-          graph={this.props.graph}/>
+          finishGraphE={this.props.finishGraphE}/>
     </div>
   }
 }
