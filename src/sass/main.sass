@@ -463,5 +463,57 @@ canvas
 //    width: 46%
 //    height: auto
 //    margin: 2% 2%
+.imageEnergy, .imageObject
+  -webkit-background-size: cover
+  background-size: cover
+  display: flex
+  flex: 1
+  margin: 60px
+.table
+  padding: 0px 15px
+  margin: 0 auto
+  font-size: 12px
+  width: 100%
+  overflow: scroll
+.headTable
+  font-size: 12px
+  display: flex
+  //justify-content: space-between
+  width: auto
+  vertical-align: top
+  > div
+    //vertical-align: top
+    display: inline-block
+    min-width: 50px
+    width: 100%
+    background-color: #fafafa
+.headDiv
+  padding: 20px 5px
+  border-bottom: 1px solid #fff
+  background-color: #ece7ff
+  min-height: 80px
+tr td
+  padding: 10px 5px
+tr 
+  &:nth-child(2n)
+    background-color: #fafafa
+.tableInfo
+  padding: 8px 15px
+.bodyDiv > div
+  border-right: 1px solid rgba(0,0,0,.1)
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  min-height: 70px
+  padding: 5px
+  font-size: 11px
+  width: 100%
+  &:nth-child(2n)
+    background-color: #f5f2ff
+
+.titleTable
+  margin-bottom: 30px
+  text-align: center
+  font-size: 24px
 
 @import "media"

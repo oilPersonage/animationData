@@ -23,47 +23,47 @@ export default function (index) {
   return {
     top: [
       {
-        title: "ВНИИСОК, Дом №1",
+        title: "ВНИИССОК, Дом №1",
         v: home1.v[index].toFixed(2),
         h: home1.h[index].toFixed(2),
       },
       {
-        title: 'ВНИИСОК, Дом №3',
+        title: 'ВНИИССОК, Дом №3',
         v: home3.v[index].toFixed(2),
         h: home3.h[index].toFixed(2),
       },
       {
-        title: 'ВНИИСОК, Дом №4',
+        title: 'ВНИИССОК, Дом №4',
         v: home4.v[index].toFixed(2),
         h: home4.h[index].toFixed(2),
       },
       {
-        title: 'ВНИИСОК, Дом №6',
+        title: 'ВНИИССОК, Дом №6',
         v: home6.v[index].toFixed(2),
         h: home6.h[index].toFixed(2),
       },
       {
-        title: 'ВНИИСОК, Дом №8',
+        title: 'ВНИИССОК, Дом №8',
         v: home8.v[index].toFixed(2),
         h: home8.h[index].toFixed(2),
       },
       {
-        title: 'ВНИИСОК, Дом №9',
+        title: 'ВНИИССОК, Дом №9',
         v: home2.v[index].toFixed(2),
         h: home2.h[index].toFixed(2),
       },
       {
-        title: 'ВНИИСОК, ЦТП ВНИИССОК',
+        title: 'ВНИИССОК, ЦТП ВНИИССОК',
         v: home9.v[index].toFixed(2),
         h: home9.h[index].toFixed(2),
       },
       {
-        title: 'ВНИИСОК, Дом №5',
+        title: 'ВНИИССОК, Дом №5',
         v: home5.v[index].toFixed(2),
         h: home5.h[index].toFixed(2),
       },
       {
-        title: 'ВНИИСОК, Дом №11',
+        title: 'ВНИИССОК, Дом №11',
         v: home7.v[index].toFixed(2),
         h: home7.h[index].toFixed(2),
       },

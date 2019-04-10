@@ -25,11 +25,11 @@ export default function HeadMenu () {
       </div>
       <div className="bobyMenuRight">
         <Link to={'/home'} className="linkTo">ВНИИССОК</Link>
-        <Link to={'/two'} className="linkTo">АИИСКУЭ</Link>
+        <Link to={'/aiiscue'} className="linkTo">АИИСКУЭ</Link>
         <Link to={'/three'} className="linkTo">КАРТА</Link>
-        <Link to={'/'} className="linkTo">ОБЪЕКТЫ</Link>
+        <Link to={'/objects'} className="linkTo">ОБЪЕКТЫ</Link>
         <Link to={'/four'} className="linkTo">ПОКАЗАТЕЛИ</Link>
-        <Link to={'/'} className="linkTo">ЭНЕРГОПОТРЕБЛЕНИЕ</Link>
+        <Link to={'/energy'} className="linkTo">ЭНЕРГОПОТРЕБЛЕНИЕ</Link>
       </div>
     </div>
   </div>

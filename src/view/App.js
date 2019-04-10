@@ -12,6 +12,9 @@ import Four from "./components/Four/Four";
 import Three from "./components/Three/Three";
 import Two from "./components/Two/Two";
 import Modal from "./components/Modal";
+import Energy from "./components/Energy";
+import AIISCUE from "./components/AIISCUE";
+import Objects from "./components/Objects";
 import HeadMenu from "./HeadMenu";
 
 import ns from '../data/nsData.json'
@@ -148,6 +151,10 @@ export default class App extends Component {
           <Provider store={store}>
             <Router history={history}>
               <Switch>
+
+                <Route path="/energy" history={history} component={Energy} />
+                <Route path="/objects" history={history} component={Objects} />
+                <Route path="/aiiscue" history={history} component={AIISCUE} />
                 <Route path="/one" render={() => <One now={now} electr={this.state.electr} history={history}  well={well}/>} />
                 <Route path="/two/" render={() => <Two now={now} history={history} well={well} graphHouses={this.state.graphHouses} currentIndex={this.state.currentIndex}/>} />
                 <Route path="/three/" component={Three}/>
