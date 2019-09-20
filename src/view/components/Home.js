@@ -43,7 +43,8 @@ class Home extends React.Component {
                 finishGraphE={this.props.finishGraphE}
                 graph={this.props.graph}
                 state={this.props.state.length}
-                par={1}/></Link>
+                par={1}
+            /></Link>
           </div>
         </div>
       </div>

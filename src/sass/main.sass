@@ -24,7 +24,9 @@ body
   height: 100%
   display: flex
   align-items: center
-
+.sumBox
+  display: flex
+  justify-content: space-between
 li
   list-style: none
 
@@ -35,7 +37,18 @@ canvas
   width: 100%
   height: 100%
   display: flex
-
+.ThreeBox
+  display: flex
+  flex: 1
+  height: 100%
+  width: 100%
+.imgMap
+  width: 100%
+  height: 100%
+  display: block
+  background: url("../images/map.jpg")
+  background-size: cover
+  position: relative
 .title
   width: 100%
   text-align: center
@@ -120,7 +133,8 @@ canvas
   &:hover
     top: calc(2.2% - 3px)
     box-shadow: 0px 3px 2px rgba(0, 0, 0, .1)
-
+.backButton
+  min-width: 80px
 .closeModal
   position: absolute
   left: 50%
@@ -133,6 +147,16 @@ canvas
     bottom: 32px
     top: auto
     box-shadow: 0px 3px 2px rgba(0, 0, 0, .1)
+
+.LinkToDash
+  position: absolute
+  width: 70px
+  height: 70px
+  border-radius: 50%
+  transition: 0.15s ease-out
+  &:hover
+    background: rgba(255, 255, 255, 0.3)
+    box-shadow: 0 0 5px rgba($darkBlue,1)
 
 @keyframes role
   0%
@@ -488,13 +512,14 @@ canvas
     width: 100%
     background-color: #fafafa
 .headDiv
+  text-align: center
   padding: 20px 5px
   border-bottom: 1px solid #fff
   background-color: #ece7ff
   min-height: 80px
 tr td
   padding: 10px 5px
-tr 
+tr
   &:nth-child(2n)
     background-color: #fafafa
 .tableInfo
@@ -515,5 +540,20 @@ tr
   margin-bottom: 30px
   text-align: center
   font-size: 24px
+
+.headDiv.headBox
+  text-align: center
+  .box
+    text-align: center
+    margin: 0 auto
+
+.tableBox
+  display: flex
+  flex-direction: column
+  .sumBox
+    order: 0
+    justify-content: flex-end
+  .tableHead
+    order: 1
 
 @import "media"

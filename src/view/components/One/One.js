@@ -55,7 +55,6 @@ class One extends React.Component {
 
         return <div className="componentBox" style={{height: heightCont, width: widthCont, opacity: this.state.view}}
                     ref={node => this.cont = node}>
-            <div className="logo"><img src={logo}/></div>
             {!this.props.par && <Back history={this.props.history}/>}
             {heightCont && widthCont && fontSize ? <Stage width={widthCont} height={heightCont}>
                     <Layer>
